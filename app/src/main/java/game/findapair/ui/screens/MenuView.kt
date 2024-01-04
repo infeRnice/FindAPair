@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -52,7 +53,9 @@ fun MenuView(
             Spacer(modifier = Modifier.height(20.dp))
             GradientButton(
                 text = "PLAY",
-                onClick = { navController.navigate("game") },
+                onClick = {
+                    viewModel.resetGame()
+                    navController.navigate("game") },
                 gradientColors = gradientColors,
                 reverseGradientColors = reverseGradientColors
             )
@@ -81,13 +84,14 @@ fun MenuView(
         }
         Box(
             modifier = Modifier.align(Alignment.TopEnd)) {
-            CurrencyDisplay(currency = viewModel.currency)
+            CurrencyDisplay(viewModel)
         }
     }
 }
 
 @Composable
-fun CurrencyDisplay(currency: Int) {
+fun CurrencyDisplay(viewModel: FindAPairViewModel) {
+    val currency = viewModel.currency.collectAsState().value
     Row(
         modifier = Modifier
             .padding(20.dp),

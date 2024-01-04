@@ -66,5 +66,4 @@ fun TimerDisplay(timerState: MutableState<Int>) {
             style = TextStyle(fontSize = 10.sp)
         )
     }
-
 }

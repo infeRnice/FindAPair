@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -18,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import game.findapair.R
 import game.findapair.presentation.FindAPairViewModel
 import game.findapair.ui.components.CardView
@@ -42,11 +45,18 @@ fun generateShuffledCards(): List<Pair<Int, Int>> {
 }
 
 @Composable
-fun GameScene() {
+fun GameScene(viewModel: FindAPairViewModel, navController: NavController) {
 
-    val viewModel: FindAPairViewModel = viewModel()
     val timerState = remember { mutableStateOf(60) }
-    val shuffledCards = generateShuffledCards()
+    val shuffledCards = remember { generateShuffledCards() }
+
+    // Наблюдение за состоянием совпавших карт
+    LaunchedEffect(viewModel.matchedCards.collectAsState().value) {
+        if (viewModel.isGameCompleted()) {
+            viewModel.calculateReward(timerState.value)
+            navController.navigate("endGame")
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -67,7 +77,7 @@ fun GameScene() {
         ) {
             TimerDisplay(timerState)
             Spacer(modifier = Modifier.weight(1f))
-            CurrencyDisplay(currency = viewModel.currency)
+            CurrencyDisplay(viewModel)
 
         }
 
