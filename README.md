@@ -7,7 +7,5 @@ Game Find a Pair
 -Flow
 -MVVM
 
-#GamePlay demo:
+## GamePlay demo:
 [![Find_A_Pair](https://i.imgur.com/taMGkBH.png)](https://www.youtube.com/watch?v=_QAaquwwBzA)
-
-
