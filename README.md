@@ -1,13 +1,23 @@
+<h1 align="center">Find A Pair</h1>
 
-# FindAPair
-```kotlin
-Game Find a Pair
+<p>
+  Game Find a Pair - это приложение, разработанное с использованием Jetpack Compose и Material3. Оно демонстрирует применение Flow и архитектурного паттерна MVVM.
+</p>
 
--Jetpack Compose.Material3
--Flow
--MVVM
+<h2>Особенности игры:</h2>
+<p>Описание особенностей игры и её функционала.</p>
 
-## GamePlay demo:
-[Find a Pair Game Demo Video](https://www.youtube.com/watch?v=_QAaquwwBzA)
-![Main menu](https://i.imgur.com/taMGkBH.png)
+<h2>Скриншоты проекта:</h2>
+<img src="https://i.imgur.com/taMGkBH.png" alt="Скриншот главного меню" width="400" height="800">
 
+<h2>Демонстрационное видео приложения:</h2>
+<p>Смотрите демо игры здесь: <a href="https://www.youtube.com/watch?v=_QAaquwwBzA" target="_blank">Find a Pair Game Demo Video</a></p>
+
+<h2>💻 Использованные технологии</h2>
+<ul>
+  <li>Jetpack Compose</li>
+  <li>Material3</li>
+  <li>Flow</li>
+  <li>MVVM</li>
+
+</ul>
