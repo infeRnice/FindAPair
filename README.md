@@ -7,5 +7,6 @@ Game Find a Pair
 -Flow
 -MVVM
 
-#GamePlay description:
-[![Find_A_Pair] (https://drive.google.com/file/d/1VoP42cAZ329GKr7n9qeRmUb18fqRiNq-/view?usp=sharing)] (https://www.youtube.com/watch?v=_QAaquwwBzA)
+#GamePlay demo:
+[![Find_A_Pair](https://drive.google.com/uc?export=view&id=1VoP42cAZ329GKr7n9qeRmUb18fqRiNq-)](https://www.youtube.com/watch?v=_QAaquwwBzA)
+
