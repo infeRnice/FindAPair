@@ -8,4 +8,6 @@ Game Find a Pair
 -MVVM
 
 ## GamePlay demo:
-https://www.youtube.com/watch?v=_QAaquwwBzA
+[Find a Pair Game Demo Video](https://www.youtube.com/watch?v=_QAaquwwBzA)
+![Main menu](https://i.imgur.com/taMGkBH.png)
+
